@@ -118,11 +118,12 @@ class RNKakaoLogins: NSObject {
     func addChannel(_ resolve: @escaping RCTPromiseResolveBlock,
                 rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
         DispatchQueue.main.async {
-            TalkApi.shared.addChannel(channelPublicId: "_hlZXG") {
-								if let error = error {
-									print(error)
-								} else {
-									print("addChannel() success.")
+            TalkApi.shared.addChannel(channelPublicId: "_hlZXG") { result in
+								switch result {
+								case .success:
+										print("addChannel() success.")
+								case .failure(let error):
+										print(error)
 								}
 						}
         }
