@@ -11,6 +11,7 @@ import Foundation
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
+import KakaoSDKTalk
 
 @objc(RNKakaoLogins)
 class RNKakaoLogins: NSObject {
@@ -109,6 +110,20 @@ class RNKakaoLogins: NSObject {
                         "scopes": oauthToken?.scopes ?? "",
                     ]);
                 }
+            }
+        }
+    }
+
+    @objc(addChannel:rejecter:)
+    func addChannel(_ resolve: @escaping RCTPromiseResolveBlock,
+                rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        DispatchQueue.main.async {
+            TalkApi.shared.addChannel(channelPublicId: "_hlZXG") {
+								if let error = error {
+									print(error)
+								} else {
+									print("addChannel() success.")
+								}
             }
         }
     }

@@ -16,6 +16,8 @@ export interface KakaoLoginModuleInterface {
   loginWithKakaoAccount(): Promise<KakaoOAuthToken>;
 
   shippingAddresses(): Promise<KakaoShippingAddresses>;
+
+  addChannel(): Promise<unknown>;
 }
 
 export type KakaoOAuthToken = {

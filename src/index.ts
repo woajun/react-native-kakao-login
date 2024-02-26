@@ -25,6 +25,9 @@ const NativeKakaoLogins: KakaoLoginModuleInterface = {
   shippingAddresses() {
     return RNKakaoLogins.shippingAddresses();
   },
+  addChannel() {
+    return RNKakaoLogins.addChannel();
+  },
 };
 
 export const login = NativeKakaoLogins.login;
@@ -34,5 +37,6 @@ export const unlink = NativeKakaoLogins.unlink;
 export const getProfile = NativeKakaoLogins.getProfile;
 export const getAccessToken = NativeKakaoLogins.getAccessToken;
 export const shippingAddresses = NativeKakaoLogins.shippingAddresses;
+export const addChannel = NativeKakaoLogins.addChannel;
 
 export * from './types';
