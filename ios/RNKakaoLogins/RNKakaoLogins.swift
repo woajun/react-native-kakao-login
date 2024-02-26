@@ -124,7 +124,7 @@ class RNKakaoLogins: NSObject {
 								} else {
 									print("addChannel() success.")
 								}
-            }
+						}
         }
     }
 
